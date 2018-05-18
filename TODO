@@ -1,0 +1,99 @@
+- download 1d
+- automaticka kopie heroku DB kazdy den
+- prices - report - pro 1m/5m/1d
+- oprava e:
+  - list http://localhost:5050/data/msft/1d
+    http://localhost:5050/data/msft/5m
+    http://localhost:5050/data/msft/1m
+  - jeste jeden titul
+  - odmazat listy
+  - debug MSFT cteni
+- redirect - http://localhost:5050/data/amzn/1m -> http://localhost:5050/data/AMZN/1m
+
+prod
+23430512
+23413351
+
+dev
+23482498
+23413329
+22804030
+
+https://wixi.herokuapp.com/data/amzn/1d  201.29 / 54.99
+
+
+
+- prices - 1m & 5m
+- "trigger" pro manualni dump cen i finviz
+- initial data dump - securities
+- modul pro testy bez databaze
+- pro ukladani dni staci 200 obchodnich dni
+- poresit unadjusted close
+  - dividend
+  - split
+- web
+  - reporting aktualizace cen
+  - reporting obsazenosti DB
+  - REST dotaz na cenu s parametrem symbol & interval
+  - REST dotaz na finviz data
+- porovnat marketwatch
+- ukladat menovy pary ?
+-----------------------------------------------------------------
+https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/framework/graph.proto
+https://www.youtube.com/watch?v=j3MZ0brQ0QE
+https://github.com/FezVrasta/ark-server-tools/wiki/Install-of-required-versions-of-glibc-and-gcc-on-RHEL-CentOS
+https://github.com/loretoparisi/tensorflow-java
+https://www.chilkatsoft.com/java-loadLibrary-Linux.asp
+https://stackoverflow.com/questions/16227045/how-to-add-so-file-to-the-java-library-path-in-linux
+https://www.nvidia.com/en-us/data-center/gpu-accelerated-applications/tensorflow/
+https://www.geforce.com/hardware/desktop-gpus/geforce-605-oem/specifications
+https://towardsdatascience.com/tensorflow-speech-recognition-challenge-solution-outline-9c42dbd219c9 - speech
+
+- http://playground.tensorflow.org
+- https://www.datacamp.com/community/tutorials/tensorflow-tutorial
+- https://www.datacamp.com/community/tutorials/lstm-python-stock-market
+
+- titanic
+- xor priklad - XorExample
+- mnist
+- rekonstrukce funkce - RegressionMathFunctions
+- house prices
+- MLP classifier linear / moon / saturn - MLPClassifierLinear
+- rnn - basic example - BasicRNNExample
+- automaticke trideni classes na konec
+
+- rnn - UCISequenceClassificationExample
+- https://dzone.com/articles/java-art-generation-with-neural-style-transfer
+- https://github.com/josej30/Neural-Network
+- https://github.com/bentorfs/AI-algorithms
+- https://github.com/Jasonnor/Backpropagation/blob/master/src/Backpropagation/Algorithm/NeuralNetwork.java
+- https://github.com/bernii/NeuralNetwokPerceptronKohonen/blob/master/BackPropagation.java - matice
+- https://stackoverflow.com/questions/27280750/trouble-understanding-the-backpropagation-algorithm-in-neural-network
+- https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/
+
+- https://smalldata.tech/blog/2016/05/03/building-a-simple-neural-net-in-java
+- templating library: https://www.mscharhag.com/java/rocker-template-engine
+- vectorized algorithms in Java (SIMD, SSE, AVX) - http://richardstartin.uk/vectorised-algorithms-in-java/
+    http://prestodb.rocks/code/simd/
+    https://astojanov.github.io/blog/2017/12/20/scala-simd.html
+
+select sum(octet_length(p.data)) from price_1m p;
+select sum(octet_length(p.data)) from price_5m p;
+select sum(octet_length(p.data)) from price_1d p;
+select sum(octet_length(fv.parameters)), sum(octet_length(fv.analysts)), sum(octet_length(fv.insiders)) from market_fin_viz fv;
+po 1. dni: 308507,258671,247757
+           349822,258671,249544
+na konci tydne: 450632,259499,253467
+
+
+JDBC_DATABASE_URL=$JDBC_DE mvn install
+wixi
+
+
+
+
+org.deeplearning4j.nn.multilayer.MultiLayerNetwork.calcBackpropGradients  1353
+org.deeplearning4j.optimize.solvers.BaseOptimizer.updateGradientAccordingToParams  334
+org.deeplearning4j.optimize.solvers.BaseOptimizer.gradientAndScore 188
+org.deeplearning4j.nn.updater.UpdaterBlock.postApply
+org.deeplearning4j.optimize.solvers.StochasticGradientDescent.optimize 79 - mozna az tady
